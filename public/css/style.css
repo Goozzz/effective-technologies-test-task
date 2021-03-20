@@ -1,0 +1,32 @@
+body, html {
+	width: 100%;
+	height: 100%;
+}
+
+.div {
+	min-width: 100%;
+	min-height: 100%;
+}
+
+table {
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+td, th {
+	border: 1px solid black;
+}
+
+.idCell {
+	text-align: center;
+}
+
+#searchTextField {
+	width: 40%;
+	margin-left: 25%;
+	margin-right: auto;
+}
