@@ -1,12 +1,9 @@
 {
   "name": "testproject",
   "version": "1.0.0",
-  "description": "",
+  "description": "Test project for Effective Technologies",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "author": "wackyy52@gmail.com",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
