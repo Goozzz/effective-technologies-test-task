@@ -5,6 +5,7 @@ const storage = require('./storage');
 const utils = require('./utils');
 
 const arr = storage.data;
+const mainPage = fs.readFileSync("./views/main.html", "utf8");
 
 const app = express();
 
@@ -24,10 +25,9 @@ app.get("/", function(request, response) {
 	} else {
 		let filteredArr = arr.filter(toDo => !toDo.completed);
 		let tableBody = utils.generateTableBody(filteredArr);
-		let content = fs.readFileSync("./views/main.html", "utf8");
-		let htmlContent = content.replace("{{tableBody}}", tableBody);
+		let page = mainPage.replace("{{tableBody}}", tableBody);
 
-		response.send(htmlContent);
+		response.send(page);
 	}
 });
 
