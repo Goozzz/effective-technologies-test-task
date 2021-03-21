@@ -1,11 +1,10 @@
 const express = require('express');
-const fs = require('fs');
 
 const storage = require('./storage');
 const utils = require('./utils');
 
 const arr = storage.data;
-const mainPage = fs.readFileSync("./views/main.html", "utf8");
+const mainPage = utils.preparePage(arr);
 
 const app = express();
 
@@ -23,11 +22,7 @@ app.get("/", function(request, response) {
 		
 		response.status(200).json(filteredArr);
 	} else {
-		let filteredArr = arr.filter(toDo => !toDo.completed);
-		let tableBody = utils.generateTableBody(filteredArr);
-		let page = mainPage.replace("{{tableBody}}", tableBody);
-
-		response.send(page);
+		response.send(mainPage);
 	}
 });
 
